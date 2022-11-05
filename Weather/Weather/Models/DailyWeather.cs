@@ -4,9 +4,7 @@ using System.Text;
 
 namespace Weather.Models
 {
-    /// <summary>
-    /// Represents a record of a day's weather data
-    /// </summary>
+    
     public class DailyWeather : IDailyWeather
     {
         public static DailyWeather EmptyDailyWeather = new DailyWeather();
@@ -25,31 +23,10 @@ namespace Weather.Models
             MinTemp = minTemp;
         }
 
-        // Private constructor used for empty object
+        
 
         private DailyWeather() { }
 
-        // Equality operations overridden for completeness. The intent is that
-        // this application treats DailyWeather as a value object.
-
-        public override bool Equals(Object obj)
-        {
-            return obj is DailyWeather dailyWeather && this == dailyWeather;
-        }
-
-        public override int GetHashCode()
-        {
-            return DayOfMonth.GetHashCode() ^ MaxTemp.GetHashCode() ^ MinTemp.GetHashCode();
-        }
-
-        public static bool operator ==(DailyWeather x, DailyWeather y)
-        {
-            return x.DayOfMonth == y.DayOfMonth && x.MaxTemp == y.MaxTemp && x.MinTemp == y.MinTemp;
-        }
-
-        public static bool operator !=(DailyWeather x, DailyWeather y)
-        {
-            return !(x == y);
-        }
+        
     }
 }
